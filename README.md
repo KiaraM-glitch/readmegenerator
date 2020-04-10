@@ -22,7 +22,6 @@ License:
 Tests:
 Tests can be ran by hard-coding variables in the terminal.
 
-Questions:
 <img src="https://avatars1.githubusercontent.com/u/60331626?s=460&u=46cffda8c75e6d33d7c837d0398ada93844e637f&v=4" alt="Kiara GitHub Image">
 
   <a href="mailto:kiaramahan@gmail.com">Email Me</a>

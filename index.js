@@ -3,7 +3,7 @@ const axios = require("axios");
 inquirer = require("inquirer");
 
 const api = {
-    getUser(user) {
+    getUser() {
         axios
         .get("https://api.github.com/users/kiaram-glitch",
         {
@@ -15,6 +15,6 @@ const api = {
 };
 
 
-api.getUser(user);
+api.getUser();
 
 module.exports = api;

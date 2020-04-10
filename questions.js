@@ -1,4 +1,8 @@
 var inquirer = require("inquirer");
+const api = require('./index');
+const generateMD = require('./generateMD');
+const fs = require('fs');
+const questions = inquirer
 
 inquirer
   .prompt([
@@ -52,44 +56,23 @@ inquirer
         }
     
     ])
+
     .then(answers => {
-      console.log(answers)
-      api.getUser(answers.user)
-      .then(response =>{
-      generateMD(answers, response.data)
-      const markdown = generateMD(answers, response.data)
-      fs.writeFile("./README.md", markdown, () => {
-        console.log("success!")
-      } )
+        console.log(answers)
+        api.getUser(answers.user)
+        .then(response =>{
+        generateMD(answers, response.data)
+        const markdown = generateMD(answers, response.data)
+        fs.writeFile("./README.md", markdown, () => {
+          console.log("success!")
+        } )
     
-    
-    }
-      
-      
-    )
-    .catch(error => {
-    
-      console.log(error)
-    
-    })
-    })
-    module.exports = questions;
-    
-    
-    
-    function init() {
-    
-    }
-    
-    init();
 //   .then(function(response) {
 
 //     if (response.confirm === response.password) {
 //       console.log("Success!");
 //     }
 //     else {
-//       console.log("You forgot your password already?!");
+//       console.log("fail");
 //     }
-//   });
-//badge:
-  //<img align="left" src= "https://img.shields.io/badge/License-${response.license}-green">
+    });
